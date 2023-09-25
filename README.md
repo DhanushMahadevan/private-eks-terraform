@@ -122,9 +122,11 @@ users:
 ```
 kubectl get nodes
 ```
-## Now you can see the Running Worker Node in EKS Cluster.
+## Result:
+Now you can see the Running Worker Node in EKS Cluster.
 
-## IF any issue with this process. Contribute to this repository or  feel free to ask me via  dhanushmahadevanabalaji@gmail.com
+# Support and Contribution
+For any issues or concerns, please open an issue. Contributions and improvements are welcome; feel free to create a pull request.
 
 # Happy coding and Deploying!.........
 
