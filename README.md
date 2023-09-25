@@ -77,7 +77,56 @@ terraform plan -out=tfplan
 ```
 terraform apply
 ```
-## Happy coding and Deploying !.
+## Instance Configuration:
+
+## Run AWS Configure Command and put your credentials.
+```
+ aws configure
+```
+
+
+### Step 1: ALlow 443 port from Jumpserver security to the eks-cluster security (For Accessing the private eks cluster from Jumpserver)
+
+### Step 2: Install Kubectl on Jumpserver
+ **KUBECTL**: [Installation Guide](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+ 
+### Step 3: Edit the .kube/config apiVersion as client.authentication.k8s.io/v1beta1
+```
+    server: https://02775CCD2DD9D8430DF33D4E655D3799.gr7.us-west-2.eks.amazonaws.com
+  name: arn:aws:eks:us-west-2:729136773185:cluster/redis-cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:us-west-2:xxxxxxxxxx5:cluster/redis-cluster
+    user: arn:aws:eks:us-west-2:xxxxxxxxxx5:cluster/redis-cluster
+  name: arn:aws:eks:us-west-2:xxxxxxxxxx5:cluster/redis-cluster
+current-context: arn:aws:eks:us-west-2:xxxxxxxxxx5:cluster/redis-cluster
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:us-west-2:xxxxxxxxxx5:cluster/redis-cluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - --region
+      - us-west-2
+      - eks
+      - get-token
+      - --cluster-name
+      - redis-cluster
+      command: aws
+~
+
+```
+### step 4: Run the Kubectl commands:
+```
+kubectl get nodes
+```
+## Now you can see the Running Worker Node in EKS Cluster.
+
+## IF any issue with this process. Contribute to this repository or  feel free to ask me via  dhanushmahadevanabalaji@gmail.com
+
+# Happy coding and Deploying!.........
 
 
 
