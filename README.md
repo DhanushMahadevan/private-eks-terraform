@@ -85,7 +85,7 @@ terraform apply
 ```
 
 
-### Step 1: ALlow 443 port from Jumpserver security to the eks-cluster security (For Accessing the private eks cluster from Jumpserver)
+### Step 1: Allow 443 port from Jumpserver security to the eks-cluster security (For Accessing the private eks cluster from Jumpserver)
 
 ### Step 2: Install Kubectl on Jumpserver
  **KUBECTL**: [Installation Guide](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
